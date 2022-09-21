@@ -15,6 +15,7 @@
                         // is connected
 #define LED_RED PB0                        
 #define SHORT_DELAY 250 // Delay in milliseconds
+#define LONG_DELAY 500
 #ifndef F_CPU
 # define F_CPU 16000000 // CPU frequency in Hz required for delay funcs
 #endif
@@ -51,16 +52,31 @@ int main(void)
     while (1)
     {
         // Change LED value
-        if (led_value == LOW)
+       /* if (led_value == LOW)
             led_value = HIGH;
         else
             led_value = LOW;
-
+        */
+        led_value = HIGH;
         // Pause several milliseconds
         _delay_ms(SHORT_DELAY);
         // Turn ON/OFF on-board LED
-        digitalWrite(LED_GREEN, led_value);
         digitalWrite(LED_RED, led_value);
+        // digitalWrite(LED_RED, led_value);
+        led_value = LOW;
+        _delay_ms(SHORT_DELAY);
+        digitalWrite(LED_RED, led_value);
+
+        led_value = HIGH;
+        _delay_ms(SHORT_DELAY);
+        digitalWrite(LED_RED, led_value);
+
+        led_value = LOW;
+        _delay_ms(LONG_DELAY);
+        digitalWrite(LED_RED, led_value);
+        _delay_ms(LONG_DELAY);
+
+
     }
 
     // Will never reach this
