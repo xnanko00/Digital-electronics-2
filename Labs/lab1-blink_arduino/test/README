@@ -8,7 +8,7 @@
 int main(void)
 {
     // Set pin where on-board LED is connected as output
-    pinMode(LED_GREEN, OUTPUT);
+    pinMode(LED_RED, OUTPUT);
 
     // Infinite loop
     while (1)
@@ -16,19 +16,19 @@ int main(void)
         // Generate a lettre `A` Morse code
 
         led_value = HIGH;
-        digitalWrite(LED_GREEN, led_value);
+        digitalWrite(LED_RED, led_value);
         _delay_ms(SHORT_DELAY);
 
         led_value = LOW;
-        digitalWrite(LED_GREEN, led_value);
+        digitalWrite(LED_RED, led_value);
         _delay_ms(SHORT_DELAY);
 
         led_value = HIGH;
-        digitalWrite(LED_GREEN, led_value);
+        digitalWrite(LED_RED, led_value);
         _delay_ms(LONG_DELAY);
 
         led_value = LOW;
-        digitalWrite(LED_GREEN, led_value);
+        digitalWrite(LED_RED, led_value);
         _delay_ms(LONG_DELAY);
 
     }
