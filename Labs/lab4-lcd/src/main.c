@@ -81,6 +81,7 @@ int main(void)
         lcd_data(customChar[a]);
         a++;}
       lcd_command(1<<LCD_DDRAM);
+      
 
     }
                                      // ie to individual lines of character patterns
