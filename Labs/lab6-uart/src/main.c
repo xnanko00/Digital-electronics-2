@@ -66,5 +66,12 @@ int main(void)
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-    // Transmit UART string(s)
+    uint8_t value;
+    char string[8];  // String for converted numbers by itoa()
+
+    value = uart_getc();
+    if (value != '\0') {  // Data available from UART
+        // Display ASCII code of received character
+        // WRITE YOUR CODE HERE
+    }
 }
